@@ -1,5 +1,6 @@
 # KeggPathwaySelector
-Software for getting information on pathways related to a list of genes. 
+Software for getting information on pathways related to a list of genes.
+
 BME 295 Data Science  12/06/22
 Gabriel Ketron  55928130
 
