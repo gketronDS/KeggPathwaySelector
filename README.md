@@ -7,7 +7,9 @@ Gabriel Ketron  55928130
 Final Project
 [KEGG Genes and Pathways]
 
-	Alzheimer’s disease is a neurodegenerative disease that causes most dementia cases around the world. Ongoing investigation into the mechanisms of Alzheimer's disease cover a spectrum of genomic, metabolic, and transcriptomic data. The aim of this paper is to demonstrate R software developed to congregate relevant multiomic data to identify unexpected metabolic pathways which may impact Alzheimer's Disease.
+	Alzheimer’s disease is a neurodegenerative disease that causes most dementia cases around the world. Ongoing investigation into the mechanisms 
+	of Alzheimer's disease cover a spectrum of genomic, metabolic, and transcriptomic data. The aim of this paper is to demonstrate R software 
+	developed to congregate relevant multiomic data to identify unexpected metabolic pathways which may impact Alzheimer's Disease.
 This software queries a list of genes in the Kyoto Encyclopedia of Genes and Genomes’ R API to determine which metabolic pathways appeared most often, which gene played a role in the most amount of record pathways, and how the number of genes encoding a pathway related to protein and RNA production. By applying this software to Alzheimer's disease-related genes, this paper identifies the metabolic pathway that these genes contribute to the most, and by extension, which pathways may play a role in metabolic pathology.
 
 Key Findings
