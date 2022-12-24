@@ -2,7 +2,6 @@
 library(knitr)
 options(width=80)
 library(readxl)
-library(nhanesA)
 library(tidyverse)
 library(ggplot2)
 library(ggthemes)
@@ -168,28 +167,41 @@ geneWAY <- geneWAY[order(-geneWAY$PATHS),]
 #geneWAY
 ## Relationship Between gene CDS and gene position
 ggplot(geneWAY, aes(x=CDS,y=POS,color=POS)) + 
-  geom_point(size=0.5) 
+  geom_smooth()+
+  geom_point(size=0.5)+
+  ggtitle("Relationship Between gene \n CDS and gene position")
 ##Relationship Between CDS and Gene Paths
 ggplot(geneWAY, aes(x=CDS,y=PATHS,color=POS)) + 
-  geom_point(size=0.5) 
+  geom_smooth()+
+  geom_point(size=0.5)+
+  ggtitle("Relationship Between CDS and Gene Paths")
 ##Relationship Between CDS and DNA Length
-ggplot(geneWAY, aes(x=CDS,y=DL,color=POS)) + 
-  geom_point(size=0.5) 
+ggplot(geneWAY, aes(x=CDS,y=DL,color=POS)) +
+  geom_smooth()+
+  geom_point(size=0.5) +
+  ggtitle("Relationship Between CDS and DNA Length")
 ##Relationship between Gene postion and gene paths
 ggplot(geneWAY, aes(x=POS,y=PATHS,color=POS)) + 
-  geom_point(size=0.5) 
+  geom_smooth()+
+  geom_point(size=0.5) +
+  ggtitle("Relationship between Gene postion and gene paths")
 ##relationship between Gene position and DNA length
 ggplot(geneWAY, aes(x=POS,y=DL,color=POS)) + 
-  geom_point(size=0.5) 
+  geom_smooth()+
+  geom_point(size=0.5) +
+  ggtitle("relationship between Gene position and DNA length")
 ##relationship between Gene paths and DNA length
 ggplot(geneWAY, aes(x=PATHS,y=DL,color=POS)) + 
-  geom_point(size=0.5) 
+  geom_smooth()+
+  geom_point(size=0.5) +
+  ggtitle("relationship between Gene paths and DNA length")
 
 #pathWAY
 ##Relationship between N and Related paths
 ggplot(pathWAY, aes(x=n,y=RELL)) + 
   geom_smooth()+
-  geom_point(size=0.5)
+  geom_point(size=0.5)+
+  ggtitle("Relationship between contributing genes and related paths")
 #relationship between N and number of proteins
 lm_eqn <- function(df){
   m <- lm(PROT ~ n, df);
@@ -205,28 +217,32 @@ ggplot(pathWAY, aes(x=n,y=PROT)) +
   geom_text(x = 30, y = 1000, label = lm_eqn(pathWAY), parse = TRUE)+
   geom_point(size=0.5)+
   xlab("Number of Genes encoding the Pathway") +
-  ylab("Number of Transcripted Proteins") +
+  ylab("Number of Transcripted Proteins")
   ggtitle("Relationship Between Encoding Genes and Proteins") +
   theme_bw()
-#Relationship between N and refrences
+#Relationship between N and references
 ggplot(pathWAY, aes(x=n,y=REF)) + 
   geom_smooth()+
-  geom_point(size=0.5)
+  geom_point(size=0.5)+
+  ggtitle("Relationship between contributing genes and references")
 #Relationship Drugs and compounds
 ggplot(pathWAY, aes(x=DRUGL,y=COMPL,color=n)) + 
   geom_smooth()+
-  geom_point(size=0.5)
+  geom_point(size=0.5)+
+  ggtitle("Relationship Drugs and compounds")
 #relationship between Drugs and proteins
 ggplot(pathWAY, aes(x=DRUGL,y=PROT,color=n)) + 
   geom_smooth()+
-  geom_point(size=0.5)
+  geom_point(size=0.5)+
+  ggtitle("relationship between Drugs and proteins")
 #relationship between compounds and proteins
 ggplot(pathWAY, aes(x=COMPL,y=PROT,color=n)) + 
   geom_smooth()+
-  geom_point(size=0.5)
+  geom_point(size=0.5)+
+  ggtitle("relationship between compounds and proteins")
 #Final Results
 #Picture of pathway with most genes w # of genes
-strwrk <- pathWAY[[1]][[1]]
+strwrk <- pathWAY[[1]][[9]]
 strwrk<-strsplit(strwrk, split = ":")
 temp <- strwrk[[1]][2]
 png<-keggGet(temp,"image")
