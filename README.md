@@ -1,5 +1,5 @@
 # KeggPathwaySelector
-Software for getting information on pathways related to a list of genes. Full paper can be found as Identifying_unexpected... in the file list.
+Software for getting information on pathways related to a list of genes. Full paper can be found as KEGG API Project in the file list.
 
 BME 295 Data Science  12/06/22
 Gabriel Ketron  55928130
